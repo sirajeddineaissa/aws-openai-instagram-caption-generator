@@ -1,5 +1,6 @@
 import os
 from typing import List
+from xmlrpc.client import boolean
 import openai
 import argparse
 import re
@@ -10,11 +11,14 @@ def main():
     argParser.add_argument("--input", "-i", type=str, required=True)
     args = argParser.parse_args()
     input = args.input
-    print(f"Input : {input}")
-    caption_result = generate_instagram_caption(input)
-    related_words_result = generate_related_words(input)
-    print(caption_result)
-    print(related_words_result)
+    print(f"Generating data for the input : {input}")
+    if valid_input(input):
+        caption_result = generate_instagram_caption(input)
+        related_words_result = generate_related_words(input)
+        print(f"Generated Caption : {caption_result}")
+        print(f"Related Words : {related_words_result}")
+    else:
+        raise ValueError(f"Make your input shorter!")
 
 
 def generate_related_words(theme: str) -> List[str]:
@@ -48,6 +52,10 @@ def generate_instagram_caption(theme: str) -> str:
     caption = caption.strip()
 
     return caption
+
+
+def valid_input(input: str) -> bool:
+    return len(input) <= 20
 
 
 if __name__ == "__main__":
