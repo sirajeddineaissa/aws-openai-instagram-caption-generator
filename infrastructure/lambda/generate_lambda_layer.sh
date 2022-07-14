@@ -1,7 +1,7 @@
 docker rm layer-container
 
 # Build the Lambda layer
-docker build -t lambda-layer
+docker build -t lambda-layer .
 
 # Rename it to layer-container
 docker run --name layer-container lambda-layer
