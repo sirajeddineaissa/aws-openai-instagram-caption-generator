@@ -29,11 +29,10 @@ def generate_related_words(theme: str) -> List[str]:
         model="text-davinci-002", prompt=prompt, max_tokens=100)
     words = response["choices"][0]["text"]
     words = words.strip()
-
     words_list = re.split("-|,|\n", words)
 
     # Clean generated list of words
-    words_list = [w.upper() for w in words_list if len(w)]
+    words_list = [w.upper().strip() for w in words_list if len(w)]
 
     return words_list
 
