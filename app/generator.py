@@ -1,6 +1,5 @@
 import os
 from typing import List
-from xmlrpc.client import boolean
 import openai
 import argparse
 import re
@@ -25,7 +24,7 @@ def generate_related_words(theme: str) -> List[str]:
     # Load the API key generated from OpenAPI
     openai.api_key = os.getenv("OPENAI_API_KEY")
 
-    prompt = f"Generate related caption words to {theme} : "
+    prompt = f"Generate caption words related to {theme} : "
     response = openai.Completion.create(
         model="text-davinci-002", prompt=prompt, max_tokens=100)
     words = response["choices"][0]["text"]
