@@ -1,5 +1,5 @@
 from fastapi import FastAPI, HTTPException
-from .generator import generate_instagram_caption, generate_related_words
+from generator import generate_instagram_caption, generate_related_words
 from mangum import Mangum
 
 app = FastAPI()
