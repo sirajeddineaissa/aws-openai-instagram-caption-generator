@@ -8,7 +8,8 @@ RUN yum install -y python37 && \
 
 # Pip and virtualenv config
 RUN python3.7 -m pip install --upgrade pip && \
-    python3.7 -m pip install virtualenv
+    python3.7 -m pip install virtualenv && \
+    python3.7 -m pip install numpy
 RUN python3.7 -m venv env
 RUN source env/bin/activate
 
@@ -18,4 +19,4 @@ RUN pip install -r requirements.txt -t ./python
 
 # Archive for deployment
 RUN zip -r lambda_layer.zip ./python/
-ENTRYPOINT [ "/bin/bash", "-1" ]
+ENTRYPOINT [ "/bin/bash", "-l" ]
