@@ -8,8 +8,7 @@ RUN yum install -y python37 && \
 
 # Pip and virtualenv config
 RUN python3.7 -m pip install --upgrade pip && \
-    python3.7 -m pip install virtualenv && \
-    python3.7 -m pip install numpy
+    python3.7 -m pip install virtualenv 
 RUN python3.7 -m venv env
 RUN source env/bin/activate
 

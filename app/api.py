@@ -24,3 +24,4 @@ async def generate_words_api(theme: str):
 def validate_input(theme: str):
     if len(theme) >= 20:
         raise HTTPException(status_code=400, detail="Make your input shorter!")
+
