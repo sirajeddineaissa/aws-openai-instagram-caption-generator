@@ -50,8 +50,7 @@ def generate_instagram_caption(theme: str) -> str:
         engine="davinci-instruct-beta-v3", prompt=prompt, max_tokens=50)
     caption = response["choices"][0]["text"]
 
-    # Keep only alphabets, numerics and spaces within the generated caption
-    caption = re.sub(r'[^A-Za-z0-9 ]+ ', '',caption).strip()
+    caption = caption.replace('"','').strip()
 
     return caption
 
