@@ -28,11 +28,15 @@ def generate_related_words(theme: str) -> List[str]:
     response = openai.Completion.create(
         model="text-davinci-002", prompt=prompt, max_tokens=100)
     words = response["choices"][0]["text"]
-    words = words.strip()
     words_list = re.split("-|,|\n", words)
 
-    # Clean generated list of words
-    words_list = [w.upper().strip() for w in words_list if len(w)]
+    # Keep only alphabets within the generated keywords and for some cases, replace the spaces with underscores
+    words_list = [re.sub(r'[^A-Za-z ]+', '', w).strip().replace(' ','_')
+                  for w in words_list if len(w) > 0]
+
+    # Convert keywords to uppercase format              
+    words_list = [w.upper()
+                  for w in words_list]
 
     return words_list
 
@@ -46,8 +50,8 @@ def generate_instagram_caption(theme: str) -> str:
         engine="davinci-instruct-beta-v3", prompt=prompt, max_tokens=50)
     caption = response["choices"][0]["text"]
 
-    # Clean generated caption
-    caption = caption.strip()
+    # Keep only alphabets, numerics and spaces within the generated caption
+    caption = re.sub(r'[^A-Za-z0-9 ]+ ', '',caption).strip()
 
     return caption
 
