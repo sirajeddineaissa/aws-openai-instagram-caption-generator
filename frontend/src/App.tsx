@@ -1,8 +1,12 @@
-import React from "react";
-import logo from "./logo.svg";
+import Form from "./components/Form";
+import ResultCard from "./components/ResultCard";
 
 function App() {
-  return <></>;
+  return (
+    <>
+      <Form />
+    </>
+  );
 }
 
 export default App;

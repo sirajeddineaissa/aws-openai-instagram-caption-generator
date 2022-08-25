@@ -21,6 +21,7 @@ def main():
 
 
 def generate_related_words(theme: str) -> List[str]:
+    
     # Load the API key generated from OpenAPI
     openai.api_key = os.getenv("OPENAI_API_KEY")
 
@@ -42,6 +43,7 @@ def generate_related_words(theme: str) -> List[str]:
 
 
 def generate_instagram_caption(theme: str) -> str:
+
     # Load the API key generated from OpenAPI
     openai.api_key = os.getenv("OPENAI_API_KEY")
 
