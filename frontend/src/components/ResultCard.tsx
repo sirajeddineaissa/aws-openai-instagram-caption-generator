@@ -9,8 +9,8 @@ const ResultCard: React.FC<ResultCardProps> = (props) => {
   return (
     <Center py={6}>
       <Box
-        maxW={"820px"}
-        w={"full"}
+        maxW={"950px"}
+        
         bg="white"
         boxShadow={"2xl"}
         rounded={"lg"}
@@ -21,7 +21,7 @@ const ResultCard: React.FC<ResultCardProps> = (props) => {
           {props.caption}
         </Text>
 
-        <Stack align={"center"} justify={"center"} direction={"row"} mt={6}>
+        <Stack align={"center"} justify={"center"} direction={"column"} mt={6}>
           {props.keywords.map((word, id) => {
             return (
               <Badge key={id} px={2} py={1} bg="white" fontWeight={"400"}>

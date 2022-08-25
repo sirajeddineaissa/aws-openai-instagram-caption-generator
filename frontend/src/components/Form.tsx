@@ -18,6 +18,7 @@ const Form: React.FC = () => {
   const [keywords, setKeywords] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [status, setStatus] = useState("Generate");
+
   const fetchOnSubmit = () => {
     setIsLoading(true);
     setStatus("Generating");
@@ -35,6 +36,11 @@ const Form: React.FC = () => {
         console.log(error);
       });
   };
+
+  const onEnterPress: React.KeyboardEventHandler<HTMLInputElement> = (e) => {
+    if (e.key === "Enter") fetchOnSubmit();
+  };
+
   return (
     <Box px={4} py={32} mx="auto">
       <Box
@@ -58,7 +64,8 @@ const Form: React.FC = () => {
           color="gray.500"
           lineHeight="base"
         >
-          Built using the OpenAI API for content generation and FastAPI as the API framework and delivered via an API Gateway using AWS Lambda.
+          Built using the OpenAI API for content generation and FastAPI as the
+          API framework and delivered via an API Gateway using AWS Lambda.
         </chakra.p>
         <SimpleGrid
           w={{ base: "full", md: 7 / 12 }}
@@ -76,6 +83,7 @@ const Form: React.FC = () => {
               placeholder="Type a caption..."
               value={theme}
               onChange={(e) => setTheme(e.currentTarget.value)}
+              onKeyDown={onEnterPress}
               required
             />
           </GridItem>
