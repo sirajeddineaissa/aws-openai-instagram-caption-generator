@@ -1,13 +1,18 @@
-import { Stack, StackProps } from "aws-cdk-lib";
+import { aws_secretsmanager, Stack, StackProps } from "aws-cdk-lib";
 import { Construct } from "constructs";
 import * as lambda from "aws-cdk-lib/aws-lambda";
 import * as dotenv from "dotenv";
 import * as apiGateway from "aws-cdk-lib/aws-apigateway";
 
+
 dotenv.config();
 
+interface InfrastructureStackProps extends StackProps {
+  openApiSecretName : string
+}
+
 export class InfrastructureStack extends Stack {
-  constructor(scope: Construct, id: string, props?: StackProps) {
+  constructor(scope: Construct, id: string, props: InfrastructureStackProps) {
     super(scope, id, props);
 
     const layer = new lambda.LayerVersion(this, "BaseLayer", {
@@ -21,9 +26,15 @@ export class InfrastructureStack extends Stack {
       handler: "api.handler",
       layers: [layer],
       environment: {
-        OPENAI_API_KEY: process.env.OPENAI_API_KEY ?? "",
+        OPENAI_API_SECRET_NAME: props.openApiSecretName,
+        REGION : Stack.of(this).region
       },
     });
+
+    // import secrt by refereence
+    // secret should be in json format { "value" : <API_KEY> }
+    const openApiSecret = aws_secretsmanager.Secret.fromSecretNameV2(this, "openapisecret",props.openApiSecretName)
+    openApiSecret.grantRead(apiLambda)
 
     const gateway = new apiGateway.RestApi(this, "RestAPI", {
       restApiName: "IntagramCaptionGeneratorAPI"
