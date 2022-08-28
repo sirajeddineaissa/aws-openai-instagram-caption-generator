@@ -21,9 +21,20 @@
 
 ## About The Project
 
-![Project Architecture](/docs/assets/Project_Architecture.jpg)
+### Project Architecture
 
-![API Infrastructure](/docs/assets/API_Infrastructure.jpg)
+  <div align="center">
+  
+![Project Architecture](/docs/assets/Project_Architecture.jpg)
+     </div>
+
+
+### API Infrastructure
+
+  <div align="center">
+
+![API Infrastructure](/docs/assets/API_Infrastructure.jpg)  
+  </div>
 
 This project allows users to generate captions/keywords for their instagram posts by entering a specific theme.
 
@@ -38,7 +49,7 @@ This project allows users to generate captions/keywords for their instagram post
 | Framework | ![FastAPI](https://img.shields.io/badge/fastapi-109989?style=for-the-badge&logo=FASTAPI&logoColor=white)|
 | Hosting   | ![AWS](https://img.shields.io/badge/Amazon_AWS-FF9900?style=for-the-badge&logo=amazonaws&logoColor=white) (Lambda and API Gateway)|
 | Content Generation     | [OpenAI](https://openai.com/) |
-| Infrastructure    | [AWS CDK](https://aws.amazon.com/cdk/), ![Docker](https://img.shields.io/badge/Docker-2CA5E0?style=for-the-badge&logo=docker&logoColor=white)|
+| Infrastructure    | ![Docker](https://img.shields.io/badge/Docker-2CA5E0?style=for-the-badge&logo=docker&logoColor=white) , [AWS CDK](https://aws.amazon.com/cdk/)|
 
 
 #### Frontend Stack
