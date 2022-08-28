@@ -36,9 +36,9 @@ This project allows users to generate captions/keywords for their instagram post
 | --------- | ------------------------------------------------------------ |
 | Language  | ![Python](https://img.shields.io/badge/Python-FFD43B?style=for-the-badge&logo=python&logoColor=blue)|
 | Framework | ![FastAPI](https://img.shields.io/badge/fastapi-109989?style=for-the-badge&logo=FASTAPI&logoColor=white)|
-| Hosting   | ![AWS](https://img.shields.io/badge/Amazon_AWS-FF9900?style=for-the-badge&logo=amazonaws&logoColor=white) (Lambda + API Gateway)|
-| Content Generation     | [OpenAI](https://openai.com/), [AWS CDK](https://aws.amazon.com/cdk/), [Docker](https://www.docker.com/) |
-| Infrastructure    | [AWS CDK](https://aws.amazon.com/cdk/), [Docker](https://www.docker.com/) |
+| Hosting   | ![AWS](https://img.shields.io/badge/Amazon_AWS-FF9900?style=for-the-badge&logo=amazonaws&logoColor=white) (Lambda and API Gateway)|
+| Content Generation     | [OpenAI](https://openai.com/) |
+| Infrastructure    | [AWS CDK](https://aws.amazon.com/cdk/), ![Docker](https://img.shields.io/badge/Docker-2CA5E0?style=for-the-badge&logo=docker&logoColor=white)|
 
 
 #### Frontend Stack
@@ -67,13 +67,13 @@ Make sure you give this project a ⭐.
 Distributed under the GNU General Public License v3.0 License. Check `LICENSE` for more information.
 
 
-[contributors-shield]: https://img.shields.io/github/contributors/sirajeddineaissa/github-repo-search?style=for-the-badge
-[contributors-url]: https://github.com/sirajeddineaissa/github-repo-search/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/sirajeddineaissa/github-repo-search?style=for-the-badge
-[forks-url]: https://github.com/sirajeddineaissa/github-repo-search/network/members
-[stars-shield]: https://img.shields.io/github/stars/sirajeddineaissa/github-repo-search?style=for-the-badge
-[stars-url]: https://github.com/sirajeddineaissa/github-repo-search/stargazers
-[issues-shield]: https://img.shields.io/github/issues/sirajeddineaissa/github-repo-search?style=for-the-badge
-[issues-url]: https://github.com/sirajeddineaissa/github-repo-search/issues
-[license-shield]: https://img.shields.io/github/license/sirajeddineaissa/github-repo-search?style=for-the-badge
-[license-url]: https://github.com/sirajeddineaissa/github-repo-search/blob/main/LICENSE
+[contributors-shield]: https://img.shields.io/github/contributors/sirajeddineaissa/aws-openai-instagram-generator?style=for-the-badge
+[contributors-url]: https://github.com/sirajeddineaissa/aws-openai-instagram-generator/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/sirajeddineaissa/aws-openai-instagram-generator?style=for-the-badge
+[forks-url]: https://github.com/sirajeddineaissa/aws-openai-instagram-generator/network/members
+[stars-shield]: https://img.shields.io/github/stars/sirajeddineaissa/aws-openai-instagram-generator?style=for-the-badge
+[stars-url]: https://github.com/sirajeddineaissa/aws-openai-instagram-generator/stargazers
+[issues-shield]: https://img.shields.io/github/issues/sirajeddineaissa/aws-openai-instagram-generator?style=for-the-badge
+[issues-url]: https://github.com/sirajeddineaissa/aws-openai-instagram-generator/issues
+[license-shield]: https://img.shields.io/github/license/sirajeddineaissa/aws-openai-instagram-generator?style=for-the-badge
+[license-url]: https://github.com/sirajeddineaissa/aws-openai-instagram-generator/blob/main/LICENSE
